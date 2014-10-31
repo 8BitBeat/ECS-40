@@ -1,0 +1,72 @@
+Christopher Chan
+
+
+main.cpp-----------------------------------------------------------------------
+
+
+
+For main I changed the instructions so it allowed me to fit the extra 8 cases:
+      << "  5 to reverse list\n"
+      << "  6 to sort list processing\n"
+      << "  7 to remove duplicates\n"
+      << "  8 to add values to l2\n"
+      << "  9 to check if vList and l2 share any nodes\n"
+      << "  10 to obtain max sum of consecutive subsets\n"
+      << "  11 to multiply every node by 2 (map)\n"
+      << "  12 to filter out all negative numbers (filter)\n"
+
+I also added a l2 and 2 functions (func) and (predicate) to use it map and filter (really simple functions)
+
+I only added a (insertatback) for l2 because all we want to do is to check whether my compare function works, so no need to get all fancy and start removing form l2 or reversing it etc.
+
+
+
+
+VectorList.cpp-----------------------------------------------------------------
+
+
+
+
+So at first, I had removed the pointer to vList because I found it unnecessary as we were working with only one vector and not multiple vectors.
+
+BUT after finishing the program and reading on the smartsite forums and finding out I HAD to use it as a pointer, I had to change all the '.' to '->' and all the vList into (*this) when it was next to a overloaded[] operator (Which wasn't too bad.
+
+I worked on reverse and sort first seeing how they were probably the easiest (because I knew how to rearrange elements in a vector (basically an array) the most) It was until later when I found out I could've used the <algorithm> library for reverse as well. (And that's probably why you're wondering why I used sort() and not reverse() as well.
+
+SPEAKING OF WHICH, i had to rename my VectorList's sort() because the compiler would get confused as to which sort I was referring to (sort from algorithm or sort within my template).
+
+Remove duplicate was pretty easy seeing how I only needed to iterate through and manipulate vList's elements. The same went for removedup(), map() and filter().
+
+Luckily I knew how to create phrases from hwk4, which allowed me to easily finish maxsubsum(), which had the same concept as creating phrases (other than the fact I had to add the subset elements together).
+
+
+
+
+LinkedList.cpp-----------------------------------------------------------------
+
+
+
+LinkedList was a little tricky to me due to the fact that I wasn't too familiar with linked lists and also because I had to do everything manually (there was no <algorithm> functions I could have used. But overall, the methods to complete the functions for linked list and vector was the same. But the only difference was that the syntax was quite different.
+
+However, once I got past the syntax issues by reading up more about it it was a breeze.
+
+
+Overall------------------------------------------------------------------------
+
+I felt that this program (surpringly to say) was quite fun to do. It was probably because knowing how to do everything (due to the fact we learned how to do this when we completed hwk4 with vectors, sets, etc.) made it so much more simpler and enjoyable.
+I felt that this assignment should have been switched with hwk 4, seeing how this assignment introduces us to STL containers, which helps us implement it when we are parsing or storing stuff to vectors.
+
+
+
+
+Valgrind---------------------------------------------------------------------
+==17504==
+==17504== HEAP SUMMARY:
+==17504==     in use at exit: 0 bytes in 0 blocks
+==17504==   total heap usage: 8 allocs, 8 frees, 126 bytes allocated
+==17504==
+==17504== All heap blocks were freed -- no leaks are possible
+==17504==
+==17504== For counts of detected and suppressed errors, rerun with: -v
+==17504== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+   
