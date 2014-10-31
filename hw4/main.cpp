@@ -8,8 +8,8 @@
 #include <cctype>
 #include "element.h"
 #include "word.h"
-#include "phrase.h"
-#include "sentence.h"
+//#include "phrase.h"
+//#include "sentence.h"
 #include "dict.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ int main()
 
     len = str.length();
     
-    if (str[len-1] == '.') {
+/*    if (str[len-1] == '.') {
       str.erase(len-1);
       Sentence s(str);
       s.complete(d);
@@ -44,7 +44,7 @@ int main()
       p.show();
       continue;
     }
-    
+*/    
     if (isalpha(str[len-1])) {
       Word w(str);
       w.complete(d);

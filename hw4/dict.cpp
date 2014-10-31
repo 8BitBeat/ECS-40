@@ -1,21 +1,4 @@
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <fstream>
-#include <set>
-#include <iterator>
-#include <algorithm>
-#include <vector>
-#include <boost/tokenizer.hpp>
 #include "dict.h"
-using namespace std;
-using namespace boost;
-
-int main(){
-  Dict d("data.txt");
-
-  return 0;
-}
 
 Dict::Dict(string f)
 {
@@ -28,8 +11,8 @@ Dict::Dict(string f)
     getline (fp, text);
     fulltext = fulltext+ ' ' + text;
   }//Reads the data.txt and inputs it to string fulltext (gets ridof pesky newline characters
-  unsigned findfirstspace= fulltext.string::find_first_of(" ");
-  fulltext.erase (findfirstspace, findfirstspace+1);
+//  int findfirstspace= fulltext.string::find_first_of(" ");
+//  fulltext.erase (findfirstspace, findfirstspace+1);
 //cout<<fulltext;
 //Senternce Parsing-------------------------------------------------------------
  
@@ -50,8 +33,6 @@ Dict::Dict(string f)
 
   set<string>::const_iterator iter;
   string s;
-  set<string> sentence;
-  vector<string> sentencevec;
   string o;
 
 
@@ -87,7 +68,6 @@ Dict::Dict(string f)
   
 //Word Parsing------------------------------------------------------------------
 
-  set<string> word;
   
   char_separator<char> sepW(". ");
   tokenizer<char_separator<char> > tokenW(fulltext, sepW);
@@ -109,7 +89,6 @@ Dict::Dict(string f)
   vector <string> broken_phrase;
   vector <vector<string> > phrase_template;
   vector <string> temp_phrase(sentence.begin(), sentence.end());
-  set <string> phrase;
   vector <string> phrasetemp;
   vector <string> transfer;
 string p;
